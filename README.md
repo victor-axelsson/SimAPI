@@ -2,7 +2,7 @@
 This project is a tool built by Victor Axelsson as a part of the thesis *Collaborative Recommendations for Music Session Instrumentation - Contrasting Graph to ML Based Approaches*. The purpose of this application is to find latent factor similarities between entities. The API exposes the functionality of finding items that take a similar role in a session using an adjecency list. This is done by the following steps: 
 
 - From the json adjecency list `dataOut.json` build a n x n sparse matrix where the rows are the start device and the columns are the end device. If you create item A then item B it means that on row A and column B there will be a 1. When this happens again, the number will be incemented. It can be though of as a markow chain with one step. 
-- On the ajecency matrix M a truncated Singlar Value Decomposition [SVD](https://en.wikipedia.org/wiki/Singular-value_decomposition) will be performed  with the help of the python library [sklearn](http://scikit-learn.org/stable/index.html).
+- On the adjecency matrix M a truncated Singlar Value Decomposition [SVD](https://en.wikipedia.org/wiki/Singular-value_decomposition) will be performed  with the help of the python library [sklearn](http://scikit-learn.org/stable/index.html).
 - The created matrices, U, v, vT and sigma will be cached to disk so that they don't have to be created every time the API gets a request. 
 - When the API gets a request it will multiply U and sigma, find the index corresponding to the posted device and use the [Cosine Similarity](https://en.wikipedia.org/wiki/Cosine_similarity) to find similar devices. 
 
@@ -188,12 +188,13 @@ RESPONSE
         "item": "<device>", 
         "score": 0.8955778236030165
     }, {
-        "item": ""<device>", 
+        "item": "<device>", 
         "score": 0.871651609543985
     }, {
-        "item": ""<device>a", 
+        "item": "<device>", 
         "score": 0.8699710664546415
     }], 
     "score": 1.0000000000000002 // The best score 
 }
 ```
+
