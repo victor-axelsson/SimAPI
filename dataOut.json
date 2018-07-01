@@ -1,0 +1,23 @@
+{
+    "device1": {
+        "device2": {
+            "weight": 10
+        },
+        "device3": {
+            "weight": 2
+        }
+    },
+    "device2": {
+        "device1": {
+            "weight": 4
+        },
+        "device3": {
+            "weight": 1
+        }
+    },
+     "device3": {
+        "device1": {
+            "weight": 3
+        }
+    }
+}

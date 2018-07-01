@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "1438ff45-7c13-4c22-978d-4fc72dbf7308",
+		"name": "SimAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAllDevices",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost:6001/device",
+					"host": [
+						"localhost"
+					],
+					"port": "6001",
+					"path": [
+						"device"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetSimilarDevices",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:6001/device/similar?device=device1&threshold=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6001",
+					"path": [
+						"device",
+						"similar"
+					],
+					"query": [
+						{
+							"key": "device",
+							"value": "device1"
+						},
+						{
+							"key": "threshold",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostSessionGetIntraSimilarity",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"devices\": [\"device1\", \"device2\", \"device3\"]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:6001/device/similar/compare",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6001",
+					"path": [
+						"device",
+						"similar",
+						"compare"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

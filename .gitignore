@@ -1,0 +1,8 @@
+_dataOut.json
+device_device_adjecency.matrix
+sigma.bin
+u.bin
+v.bin
+vt.bin
+**/__pycache__
+**/.DS_Store
